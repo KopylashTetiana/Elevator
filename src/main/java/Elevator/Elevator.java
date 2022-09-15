@@ -22,19 +22,15 @@ public class Elevator extends Premise implements Transport {
         this.level = level;
     }
 
-    public void callElevator(Floor fl) {
-        if (!fl.isUpButton()) {
-            for (int i = 0; i < fl.getPassengers().size(); i++) {
-                if ((fl.getPassengers().get(i).getDesiredFloor() > fl.getLevel())) {
+    private void callElevator(Floor fl) {
+        if (!fl.isUpButton() || !fl.isDownButton()) {
+            for (Passenger passenger : fl.getPassengers()) {
+                if ((passenger.getDesiredFloor() > fl.getLevel())) {
                     fl.setUpButton(true);
-                    break;
-                }
-            }
-        }
-        if (!fl.isDownButton()) {
-            for (int i = 0; i < fl.getPassengers().size(); i++) {
-                if ((fl.getPassengers().get(i).getDesiredFloor() < fl.getLevel())) {
+                } else {
                     fl.setDownButton(true);
+                }
+                if (fl.isUpButton() && fl.isDownButton()) {
                     break;
                 }
             }
@@ -44,16 +40,21 @@ public class Elevator extends Premise implements Transport {
     public void go() {
         System.out.println("The elevator is on.");
         callElevator(build.getFloors()[level]);
+        System.out.println(this);
         if (liftingUp) {
             for (; level < requiredFloor; level++) {
                 letOffPass();
                 letInPass();
+                callElevator(build.getFloors()[level]);
+                System.out.println(this);
             }
             liftingUp = false;
         } else {
             for (; level > requiredFloor; level--) {
                 letOffPass();
                 letInPass();
+                callElevator(build.getFloors()[level]);
+                System.out.println(this);
             }
             liftingUp = true;
         }
@@ -69,8 +70,8 @@ public class Elevator extends Premise implements Transport {
 
     public void letInPass() {
         if ((capacity > passengers.size()) && (liftingUp && build.getFloors()[level].isUpButton()) || build.getFloors()[level].isDownButton()) {
-            Passenger p;
             ListIterator<Passenger> passengersLT = build.getFloors()[level].getPassengers().listIterator();
+            Passenger p;
             while(passengersLT.hasNext() && capacity > passengers.size()) {
                 p = passengersLT.next();
                 if(liftingUp == ((p.getDesiredFloor() - level) > 0)) {
@@ -85,5 +86,12 @@ public class Elevator extends Premise implements Transport {
 
     public int getLevel() {
         return level;
+    }
+
+    @Override
+    public String toString() {
+        return "Elevator is going from " + level +
+                " floor to " + requiredFloor +
+                " floor, liftingUp=" + liftingUp;
     }
 }

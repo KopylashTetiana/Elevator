@@ -40,6 +40,10 @@ public class Floor extends Premise {
         this.numberOfPas += changing;
     }
 
+    public int getNumOfPas() {
+        return numberOfPas;
+    }
+
     public void addPassenger(Passenger passenger) {
         if(passenger != null) {
         passengers.add(passenger);
