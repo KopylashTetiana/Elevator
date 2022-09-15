@@ -8,7 +8,6 @@ public class Floor extends Premise {
     private int numberOfPas;
     private boolean upButton;
     private boolean downButton;
-
     public final Building build;
     private final List<Passenger> passengers = new LinkedList<>();
     public boolean isUpButton() {
@@ -27,11 +26,8 @@ public class Floor extends Premise {
         this.downButton = downButton;
     }
 
-    public Floor(Building b, int floorNum) {
-        build = b;
-        level = floorNum;
-    }
     public Floor(Building b, int floorNum, int numbOfPas) {
+        super(b, floorNum);
         build = b;
         level = floorNum;
         numberOfPas = numbOfPas;

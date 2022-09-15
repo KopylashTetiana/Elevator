@@ -13,11 +13,13 @@ public class Elevator extends Premise implements Transport {
 
     private boolean liftingUp = true;
     List<Passenger> passengers = new ArrayList<>();
-    private int level = 1;
+    private int level;
     public final Building build;
 
-    public Elevator(Building b) {
+    public Elevator(Building b, int level) {
+        super(b, level);
         build = b;
+        this.level = level;
     }
 
     public void callElevator(Floor fl) {
@@ -41,6 +43,7 @@ public class Elevator extends Premise implements Transport {
 
     public void go() {
         System.out.println("The elevator is on.");
+        callElevator(build.getFloors()[level]);
         if (liftingUp) {
             for (; level < requiredFloor; level++) {
                 letOffPass();

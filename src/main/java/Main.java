@@ -8,7 +8,7 @@ public class Main {
        Building b1 = new Building(5, 20, 0, 10);
         System.out.println(b1);
         System.out.println(b1.showFloors());
-        Elevator el1 = new Elevator(b1);
+        Elevator el1 = new Elevator(b1, 1);
         el1.go();
 
 
