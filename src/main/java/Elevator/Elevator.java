@@ -32,8 +32,11 @@ public class Elevator implements Transport {
                 if (fl.isUpButton() && fl.isDownButton()) {
                     break;
                 }
-                if(liftingUp == (requiredFloor - level) > 0) {///////////////////////////
-                    }
+                if(liftingUp && requiredFloor > level) {
+                    level++;
+                } else {
+                    level--;
+                }
             }
         }
     }
