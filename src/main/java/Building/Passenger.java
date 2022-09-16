@@ -1,37 +1,30 @@
 package Building;
 
 
-import java.util.Locale;
-
 public class Passenger {
     private int desiredFloor;
-    private Premise currentPremise;
+    private int currentFloor;
 
-
-    public Passenger(Premise pr) {
-        currentPremise = pr;
-        generateDesiredFloor();
+    public Passenger(int currentFl, int desiredFl) {
+        currentFloor = currentFl;
+        desiredFloor = desiredFl;
     }
 
     public int getDesiredFloor() {
         return desiredFloor;
     }
 
-    public void generateDesiredFloor() {
-        do {
-            desiredFloor = Building.generateN(1, currentPremise.build.getNumbOfFloors());
+    public void changeCurrentFloor(int floor) {
+        currentFloor = floor;
         }
-        while (desiredFloor == currentPremise.getLevel());
+
+    public void changeDesiredFloor(int floor) {
+        desiredFloor = floor;
     }
-
-
-    public void changePremise(Premise p) {
-        currentPremise = p;
-        }
 
     @Override
     public String toString() {
-        return "Passenger from " + currentPremise.getLevel() +
+        return "Passenger from " + currentFloor +
                 " floor is going to " + desiredFloor +
                 " floor.";
     }

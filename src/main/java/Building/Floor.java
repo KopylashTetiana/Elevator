@@ -3,13 +3,22 @@ package Building;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Floor extends Premise {
-    private final int level;
+public class Floor {
+    public final int level;
     private int numberOfPas;
     private boolean upButton;
     private boolean downButton;
     public final Building build;
-    private final List<Passenger> passengers = new LinkedList<>();
+    public final List<Passenger> passengers = new LinkedList<>();
+
+    public Floor(Building b, int floorNum, int numbOfPas) {
+        build = b;
+        level = floorNum;
+        numberOfPas = numbOfPas;
+        for (int i = 0; i < numbOfPas; i++) {
+            passengers.add(new Passenger(level, generateDesiredFloor()));
+        }
+    }
     public boolean isUpButton() {
         return upButton;
     }
@@ -26,16 +35,6 @@ public class Floor extends Premise {
         this.downButton = downButton;
     }
 
-    public Floor(Building b, int floorNum, int numbOfPas) {
-        super(b, floorNum);
-        build = b;
-        level = floorNum;
-        numberOfPas = numbOfPas;
-        for (int i = 0; i < numbOfPas; i++) {
-            passengers.add(new Passenger(this));
-        }
-    }
-
     public void changeNumberOfPas(int changing) {
         this.numberOfPas += changing;
     }
@@ -47,11 +46,19 @@ public class Floor extends Premise {
     public void addPassenger(Passenger passenger) {
         if(passenger != null) {
         passengers.add(passenger);
-        passenger.changePremise(this);
-        passenger.generateDesiredFloor();
+        passenger.changeCurrentFloor(level);
+        passenger.changeDesiredFloor(generateDesiredFloor());
         numberOfPas++;}
     }
 
+    private int generateDesiredFloor() {
+        int dF;
+        do {
+            dF = (int)(Math.random()*build.floors.length+1);
+        }
+        while (dF == level);
+        return dF;
+    }
 
     public List<Passenger> getPassengers() {
         return passengers;

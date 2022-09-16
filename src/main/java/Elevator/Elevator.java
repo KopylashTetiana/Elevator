@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-public class Elevator extends Premise implements Transport {
+public class Elevator implements Transport {
     private int requiredFloor;
     private static final int capacity = 5;
 
@@ -17,7 +17,6 @@ public class Elevator extends Premise implements Transport {
     public final Building build;
 
     public Elevator(Building b, int level) {
-        super(b, level);
         build = b;
         this.level = level;
     }
@@ -33,6 +32,8 @@ public class Elevator extends Premise implements Transport {
                 if (fl.isUpButton() && fl.isDownButton()) {
                     break;
                 }
+                if(liftingUp == (requiredFloor - level) > 0) {///////////////////////////
+                    }
             }
         }
     }
@@ -77,16 +78,13 @@ public class Elevator extends Premise implements Transport {
                 if(liftingUp == ((p.getDesiredFloor() - level) > 0)) {
                 passengersLT.remove();
                 build.getFloors()[level].changeNumberOfPas(-1);
-                p.changePremise(this);
+                //p.changeCurrentFloor(level);
                 passengers.add(p);
                 }
             }
         }
     }
 
-    public int getLevel() {
-        return level;
-    }
 
     @Override
     public String toString() {
