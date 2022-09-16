@@ -8,7 +8,7 @@ import java.util.ListIterator;
 
 
 public class Elevator implements Transport {
-    private int requiredFloor;
+    private int requiredFloor = 1;
     private static final int capacity = 5;
 
     private boolean liftingUp = true;
@@ -81,7 +81,6 @@ public class Elevator implements Transport {
                 if(liftingUp == ((p.getDesiredFloor() - level) > 0)) {
                 passengersLT.remove();
                 build.getFloors()[level].changeNumberOfPas(-1);
-                //p.changeCurrentFloor(level);
                 passengers.add(p);
                 }
             }

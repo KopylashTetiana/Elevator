@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Refactoring">
+    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Change callElevator method">
       <change beforePath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +88,7 @@
       <workItem from="1663134221376" duration="10527000" />
       <workItem from="1663148599798" duration="25990000" />
       <workItem from="1663222464474" duration="27196000" />
-      <workItem from="1663309913299" duration="7341000" />
+      <workItem from="1663309913299" duration="7668000" />
     </task>
     <task id="LOCAL-00001" summary="Building with elevator has created.">
       <created>1663247856687</created>
@@ -118,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663317228587</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Change callElevator method">
+      <created>1663317602763</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663317602763</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +150,8 @@
     <MESSAGE value="Method Elevator.callElevator() correction." />
     <MESSAGE value="Method Elevator.callElevator() and Elevator.go() correction." />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Change callElevator method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change callElevator method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
