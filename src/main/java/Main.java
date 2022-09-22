@@ -7,11 +7,9 @@ public class Main {
 
         Building b1 = new Building();
         System.out.println(b1);
-        System.out.println(b1.showFloors());
-        Elevator el1 = new Elevator(b1, 1);
-        el1.go();
-
-
+        //for(int i = 0; i < 20; i++) {
+            b1.elevator.go();
+        //}
     }
 
 

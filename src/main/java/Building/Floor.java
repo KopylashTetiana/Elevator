@@ -4,14 +4,14 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Floor {
-    public final int level;
-    private int numberOfPas;
+    public final byte level;
+    public int numberOfPas;
     private boolean upButton;
     private boolean downButton;
     public final Building build;
     public final List<Passenger> passengers = new LinkedList<>();
 
-    public Floor(Building b, int floorNum, int numbOfPas) {
+    public Floor(Building b, byte floorNum, byte numbOfPas) {
         build = b;
         level = floorNum;
         numberOfPas = numbOfPas;
@@ -35,14 +35,6 @@ public class Floor {
         this.downButton = downButton;
     }
 
-    public void changeNumberOfPas(int changing) {
-        this.numberOfPas += changing;
-    }
-
-    public int getNumOfPas() {
-        return numberOfPas;
-    }
-
     public void addPassenger(Passenger passenger) {
         if(passenger != null) {
         passengers.add(passenger);
@@ -51,29 +43,21 @@ public class Floor {
         numberOfPas++;}
     }
 
-    private int generateDesiredFloor() {
-        int dF;
+    private byte generateDesiredFloor() {
+        byte dF;
         do {
-            dF = (int)(Math.random()*build.floors.length+1);
+            dF = (byte)(Math.random()*build.floors.length+1);
         }
         while (dF == level);
         return dF;
     }
 
-    public List<Passenger> getPassengers() {
-        return passengers;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
     public String showPassengers() {
-        String sP = "";
+        StringBuilder sP = new StringBuilder();
         for(Passenger passenger : passengers) {
-            sP += passenger.toString() + "\n";
+            sP.append(passenger.toString()).append("\n");
         }
-        return sP;
+        return sP.toString();
     }
 
 

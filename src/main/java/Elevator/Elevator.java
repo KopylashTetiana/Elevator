@@ -7,24 +7,24 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-public class Elevator implements Transport {
-    private int requiredFloor = 1;
-    private static final int capacity = 5;
+public class Elevator {
+    private byte requiredFloor = 1;
+    public static final byte capacity = 5;
 
     private boolean liftingUp = true;
     List<Passenger> passengers = new ArrayList<>();
-    private int level;
+    public byte level = 1;
     public final Building build;
 
-    public Elevator(Building b, int level) {
+    public Elevator(Building b) {
         build = b;
-        this.level = level;
+        System.out.println("The elevator is on.");
     }
 
     private void callElevator(Floor fl) {
         if (!fl.isUpButton() || !fl.isDownButton()) {
-            for (Passenger passenger : fl.getPassengers()) {
-                if ((passenger.getDesiredFloor() > fl.getLevel())) {
+            for (Passenger passenger : fl.passengers) {
+                if ((passenger.getDesiredFloor() > fl.level)) {
                     fl.setUpButton(true);
                 } else {
                     fl.setDownButton(true);
@@ -32,32 +32,36 @@ public class Elevator implements Transport {
                 if (fl.isUpButton() && fl.isDownButton()) {
                     break;
                 }
-                if(liftingUp && requiredFloor > level) {
-                    level++;
-                } else {
-                    level--;
+            }
+            if((liftingUp && fl.isUpButton()) || (!liftingUp && fl.isDownButton())) {
+                letOffPass();
+                letInPass();
+                byte d;
+                for (byte i = 0; i < passengers.size(); i++) {
+                        d = passengers.get(i).getDesiredFloor();
+                        if (liftingUp == d > requiredFloor) {
+                            requiredFloor = d;
+                    }
                 }
             }
         }
     }
 
     public void go() {
-        System.out.println("The elevator is on.");
-        callElevator(build.getFloors()[level]);
-        System.out.println(this);
+        callElevator(build.floors[level-1]);
         if (liftingUp) {
             for (; level < requiredFloor; level++) {
+//                callElevator(build.floors[level]);
                 letOffPass();
                 letInPass();
-                callElevator(build.getFloors()[level]);
                 System.out.println(this);
             }
             liftingUp = false;
         } else {
             for (; level > requiredFloor; level--) {
+//                callElevator(build.floors[level]);
                 letOffPass();
                 letInPass();
-                callElevator(build.getFloors()[level]);
                 System.out.println(this);
             }
             liftingUp = true;
@@ -65,23 +69,26 @@ public class Elevator implements Transport {
     }
 
     public void letOffPass() {
-        for (int i = 0; i < passengers.size(); ) {
+        for (byte i = 0; i < passengers.size(); ) {
             if (passengers.get(i).getDesiredFloor() == level) {
-                build.getFloors()[level].addPassenger(passengers.remove(i));
+                build.floors[level-1].addPassenger(passengers.remove(i));
             } else i++;
         }
     }
 
     public void letInPass() {
-        if ((capacity > passengers.size()) && (liftingUp && build.getFloors()[level].isUpButton()) || build.getFloors()[level].isDownButton()) {
-            ListIterator<Passenger> passengersLT = build.getFloors()[level].getPassengers().listIterator();
+        if (capacity > passengers.size()) {
+            ListIterator<Passenger> passLT = build.floors[level-1].passengers.listIterator();
             Passenger p;
-            while(passengersLT.hasNext() && capacity > passengers.size()) {
-                p = passengersLT.next();
-                if(liftingUp == ((p.getDesiredFloor() - level) > 0)) {
-                passengersLT.remove();
-                build.getFloors()[level].changeNumberOfPas(-1);
+            while(passLT.hasNext() && capacity > passengers.size()) {
+                p = passLT.next();
+                if(liftingUp == (p.getDesiredFloor() > level)) {
+                passLT.remove();
+                build.floors[level-1].numberOfPas -= 1;
                 passengers.add(p);
+                if((liftingUp) == p.getDesiredFloor() > requiredFloor) {
+                    requiredFloor = p.getDesiredFloor();
+                    }
                 }
             }
         }
@@ -90,8 +97,18 @@ public class Elevator implements Transport {
 
     @Override
     public String toString() {
-        return "Elevator is going from " + level +
-                " floor to " + requiredFloor +
-                " floor, liftingUp=" + liftingUp;
+        char c = (liftingUp)? '^' : 'v';
+        StringBuilder sB = new StringBuilder();
+        sB.append(c);
+        for (byte i = 0; i < capacity; i++) {
+            if (i < passengers.size()) {
+                sB.append((passengers.get(i).getDesiredFloor() > 9) ? '_' : "__");
+                sB.append(passengers.get(i).getDesiredFloor());
+            } else {
+                sB.append("___");
+            }
+        }
+        sB.append(c);
+        return sB.toString();
     }
 }

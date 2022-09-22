@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Change callElevator method">
+    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Change Elevator.level field and Elevator.go method">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Building.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Passenger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elevator/Transport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +32,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2EiFJGay6DIh1xUXKViJAQfUcjH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -38,14 +47,22 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Tresp/Development/IDEAProjects/Calculator&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Tresp/Development/IDEAProjects/Elevator1&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Tresp\Development\IDEAProjects" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -88,7 +105,15 @@
       <workItem from="1663134221376" duration="10527000" />
       <workItem from="1663148599798" duration="25990000" />
       <workItem from="1663222464474" duration="27196000" />
-      <workItem from="1663309913299" duration="7668000" />
+      <workItem from="1663309913299" duration="14247000" />
+      <workItem from="1663331744010" duration="629000" />
+      <workItem from="1663332411731" duration="15000" />
+      <workItem from="1663332556915" duration="4438000" />
+      <workItem from="1663415486797" duration="5260000" />
+      <workItem from="1663524652758" duration="3075000" />
+      <workItem from="1663579530737" duration="1281000" />
+      <workItem from="1663761732178" duration="9845000" />
+      <workItem from="1663869464290" duration="2303000" />
     </task>
     <task id="LOCAL-00001" summary="Building with elevator has created.">
       <created>1663247856687</created>
@@ -125,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663317602763</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Change Elevator.level field and Elevator.go method">
+      <created>1663318122450</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663318122450</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +183,8 @@
     <MESSAGE value="Method Elevator.callElevator() and Elevator.go() correction." />
     <MESSAGE value="Refactoring" />
     <MESSAGE value="Change callElevator method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change callElevator method" />
+    <MESSAGE value="Change Elevator.level field and Elevator.go method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change Elevator.level field and Elevator.go method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

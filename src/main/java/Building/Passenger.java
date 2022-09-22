@@ -2,23 +2,23 @@ package Building;
 
 
 public class Passenger {
-    private int desiredFloor;
+    private byte desiredFloor;
     private int currentFloor;
 
-    public Passenger(int currentFl, int desiredFl) {
+    public Passenger(int currentFl, byte desiredFl) {
         currentFloor = currentFl;
         desiredFloor = desiredFl;
     }
 
-    public int getDesiredFloor() {
+    public byte getDesiredFloor() {
         return desiredFloor;
     }
 
-    public void changeCurrentFloor(int floor) {
+    public void changeCurrentFloor(byte floor) {
         currentFloor = floor;
         }
 
-    public void changeDesiredFloor(int floor) {
+    public void changeDesiredFloor(byte floor) {
         desiredFloor = floor;
     }
 
