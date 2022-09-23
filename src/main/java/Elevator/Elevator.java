@@ -20,46 +20,17 @@ public class Elevator {
         stops = new boolean[levels];
     }
 
-    private void checkFloor(Floor fl) {
-        if (!stops[fl.level - 1]) {
-            for (Passenger passenger : fl.passengers) {
-                if (liftingUp == passenger.getDesiredFloor() > fl.level) {
-                    stops[fl.level - 1] = true;
-                    break;
+    private void checkFloor(Building b) {
+        if(passengers.size() < capacity) {
+            if (!stops[level - 1]) {
+                for (Passenger passenger : b.floors[level - 1].passengers) {
+                    if (liftingUp == passenger.getDesiredFloor() > level) {
+                        stops[level - 1] = true;
+                        break;
+                    }
                 }
             }
         }
-    }
-
-    public void go(Building b) {
-        if(liftingUp) {
-                for (; level < stops.length; level++) {
-                    if(passengers.size() < capacity) {
-                        checkFloor(b.floors[level - 1]);
-                    }
-                    if(stops[level-1]) {
-                        letOffPass(b);
-                        letInPass(b);
-                        System.out.println("   *** Step " + (++counter) + " ***");
-                        System.out.println(b);
-                    }
-                    stops[level-1] = false;
-                }
-                liftingUp = false;
-            }
-        for (; level > 1; level--) {
-            if(passengers.size() < capacity) {
-                checkFloor(b.floors[level - 1]);
-            }
-            if(stops[level-1]) {
-            letOffPass(b);
-            letInPass(b);
-            System.out.println("   *** Step " + (++counter) + " ***");
-            System.out.println(b);
-            }
-            stops[level-1] = false;
-        }
-        liftingUp = true;
     }
 
     public void letOffPass(Building b) {
@@ -77,14 +48,39 @@ public class Elevator {
             while(passLT.hasNext() && capacity > passengers.size()) {
                 p = passLT.next();
                 if(liftingUp == (p.getDesiredFloor() > level)) {
-                passLT.remove();
-                b.floors[level-1].numberOfPas -= 1;
-                passengers.add(p);
-                stops[p.getDesiredFloor()-1] = true;
+                    passLT.remove();
+                    b.floors[level-1].numberOfPas -= 1;
+                    passengers.add(p);
+                    stops[p.getDesiredFloor()-1] = true;
                 }
             }
         }
     }
+
+    public void elCycle(Building b) {
+        checkFloor(b);
+        if(stops[level - 1]) {
+            letOffPass(b);
+            letInPass(b);
+            System.out.println("   *** Step " + (++counter) + " ***");
+            System.out.println(b);
+        }
+        stops[level-1] = false;
+    }
+
+    public void go(Building b) {
+        if(liftingUp) {
+                for (; level < stops.length; level++) {
+                    elCycle(b);
+                }
+                liftingUp = false;
+            }
+        for (; level > 1; level--) {
+            elCycle(b);
+        }
+        liftingUp = true;
+    }
+
     public byte getLevel() {
         return level;
     }
