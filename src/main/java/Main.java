@@ -6,8 +6,7 @@ public class Main {
 
         Building b1 = new Building();
         System.out.println(b1);
-        for(int i = 1; i < 20; i++) {
-            System.out.println("   *** Step " + i + " ***");
+        for(int i = 0; i < 10; i++) {
             b1.callElevator();
         }
 

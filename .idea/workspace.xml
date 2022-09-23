@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Changed toString() methods, refactoring.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Passenger.java" afterDir="false" />
+    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Changed Elevator, Floor classes.">
       <change beforePath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
@@ -119,7 +115,7 @@
       <workItem from="1663579530737" duration="1281000" />
       <workItem from="1663761732178" duration="9845000" />
       <workItem from="1663869464290" duration="6662000" />
-      <workItem from="1663924593383" duration="10739000" />
+      <workItem from="1663924593383" duration="11048000" />
     </task>
     <task id="LOCAL-00001" summary="Building with elevator has created.">
       <created>1663247856687</created>
@@ -170,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663873638729</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changed Elevator, Floor classes.">
+      <created>1663938878751</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663938878751</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,7 +201,8 @@
     <MESSAGE value="Change callElevator method" />
     <MESSAGE value="Change Elevator.level field and Elevator.go method" />
     <MESSAGE value="Changed toString() methods, refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed toString() methods, refactoring." />
+    <MESSAGE value="Changed Elevator, Floor classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed Elevator, Floor classes." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

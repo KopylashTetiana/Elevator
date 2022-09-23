@@ -13,6 +13,7 @@ public class Elevator {
     List<Passenger> passengers = new ArrayList<>();
     boolean [] stops;
     private byte level = 1;
+    static int counter;
 
     public Elevator(int levels) {
         System.out.println("The elevator is on.");
@@ -39,6 +40,7 @@ public class Elevator {
                     if(stops[level-1]) {
                         letOffPass(b);
                         letInPass(b);
+                        System.out.println("   *** Step " + (++counter) + " ***");
                         System.out.println(b);
                     }
                     stops[level-1] = false;
@@ -52,6 +54,7 @@ public class Elevator {
             if(stops[level-1]) {
             letOffPass(b);
             letInPass(b);
+            System.out.println("   *** Step " + (++counter) + " ***");
             System.out.println(b);
             }
             stops[level-1] = false;
