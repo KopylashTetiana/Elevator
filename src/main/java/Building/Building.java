@@ -10,7 +10,10 @@ public class Building {
         for(byte i = 0; i < floors.length; i++) {
             floors[i] = new Floor(this, (byte) (i+1), (byte)(Math.random()*11));
         }
-        elevator = new Elevator(this);
+        elevator = new Elevator(floors.length);
+    }
+    public void callElevator() {
+        elevator.go(this);
     }
 
     @Override
@@ -24,7 +27,7 @@ public class Building {
                 sB.append(' ').append(i);
             }
             sB.append('|');
-            if(i == elevator.level) {
+            if(i == elevator.getLevel()) {
                 sB.append(elevator).append('|');
             } else {
                 sB.append("                 |");

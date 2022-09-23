@@ -2,8 +2,8 @@ package Building;
 
 
 public class Passenger {
-    private byte desiredFloor;
-    private int currentFloor;
+    byte desiredFloor;
+    int currentFloor;
 
     public Passenger(int currentFl, byte desiredFl) {
         currentFloor = currentFl;
@@ -12,14 +12,6 @@ public class Passenger {
 
     public byte getDesiredFloor() {
         return desiredFloor;
-    }
-
-    public void changeCurrentFloor(byte floor) {
-        currentFloor = floor;
-        }
-
-    public void changeDesiredFloor(byte floor) {
-        desiredFloor = floor;
     }
 
     @Override

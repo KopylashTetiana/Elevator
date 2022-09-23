@@ -1,5 +1,4 @@
 import Building.Building;
-import Elevator.Elevator;
 
 public class Main {
 
@@ -7,9 +6,11 @@ public class Main {
 
         Building b1 = new Building();
         System.out.println(b1);
-        //for(int i = 0; i < 20; i++) {
-            b1.elevator.go();
-        //}
+        for(int i = 1; i < 20; i++) {
+            System.out.println("   *** Step " + i + " ***");
+            b1.callElevator();
+        }
+
     }
 
 

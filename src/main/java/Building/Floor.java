@@ -6,8 +6,7 @@ import java.util.List;
 public class Floor {
     public final byte level;
     public int numberOfPas;
-    private boolean upButton;
-    private boolean downButton;
+//    private boolean elCall;
     public final Building build;
     public final List<Passenger> passengers = new LinkedList<>();
 
@@ -19,27 +18,12 @@ public class Floor {
             passengers.add(new Passenger(level, generateDesiredFloor()));
         }
     }
-    public boolean isUpButton() {
-        return upButton;
-    }
-
-    public void setUpButton(boolean upButton) {
-        this.upButton = upButton;
-    }
-
-    public boolean isDownButton() {
-        return downButton;
-    }
-
-    public void setDownButton(boolean downButton) {
-        this.downButton = downButton;
-    }
 
     public void addPassenger(Passenger passenger) {
         if(passenger != null) {
         passengers.add(passenger);
-        passenger.changeCurrentFloor(level);
-        passenger.changeDesiredFloor(generateDesiredFloor());
+        passenger.currentFloor = level;
+        passenger.desiredFloor = generateDesiredFloor();
         numberOfPas++;}
     }
 
@@ -51,16 +35,6 @@ public class Floor {
         while (dF == level);
         return dF;
     }
-
-    public String showPassengers() {
-        StringBuilder sP = new StringBuilder();
-        for(Passenger passenger : passengers) {
-            sP.append(passenger.toString()).append("\n");
-        }
-        return sP.toString();
-    }
-
-
     @Override
     public String toString() {
         switch(numberOfPas) {
@@ -71,7 +45,5 @@ public class Floor {
                         " floor has " + numberOfPas +
                         " passengers.";
         }
-
-
     }
 }

@@ -8,92 +8,83 @@ import java.util.ListIterator;
 
 
 public class Elevator {
-    private byte requiredFloor = 1;
     public static final byte capacity = 5;
-
     private boolean liftingUp = true;
     List<Passenger> passengers = new ArrayList<>();
-    public byte level = 1;
-    public final Building build;
+    boolean [] stops;
+    private byte level = 1;
 
-    public Elevator(Building b) {
-        build = b;
+    public Elevator(int levels) {
         System.out.println("The elevator is on.");
+        stops = new boolean[levels];
     }
 
-    private void callElevator(Floor fl) {
-        if (!fl.isUpButton() || !fl.isDownButton()) {
+    private void checkFloor(Floor fl) {
+        if (!stops[fl.level - 1]) {
             for (Passenger passenger : fl.passengers) {
-                if ((passenger.getDesiredFloor() > fl.level)) {
-                    fl.setUpButton(true);
-                } else {
-                    fl.setDownButton(true);
-                }
-                if (fl.isUpButton() && fl.isDownButton()) {
+                if (liftingUp == passenger.getDesiredFloor() > fl.level) {
+                    stops[fl.level - 1] = true;
                     break;
                 }
             }
-            if((liftingUp && fl.isUpButton()) || (!liftingUp && fl.isDownButton())) {
-                letOffPass();
-                letInPass();
-                byte d;
-                for (byte i = 0; i < passengers.size(); i++) {
-                        d = passengers.get(i).getDesiredFloor();
-                        if (liftingUp == d > requiredFloor) {
-                            requiredFloor = d;
+        }
+    }
+
+    public void go(Building b) {
+        if(liftingUp) {
+                for (; level < stops.length; level++) {
+                    if(passengers.size() < capacity) {
+                        checkFloor(b.floors[level - 1]);
                     }
+                    if(stops[level-1]) {
+                        letOffPass(b);
+                        letInPass(b);
+                        System.out.println(b);
+                    }
+                    stops[level-1] = false;
                 }
+                liftingUp = false;
             }
+        for (; level > 1; level--) {
+            if(passengers.size() < capacity) {
+                checkFloor(b.floors[level - 1]);
+            }
+            if(stops[level-1]) {
+            letOffPass(b);
+            letInPass(b);
+            System.out.println(b);
+            }
+            stops[level-1] = false;
         }
+        liftingUp = true;
     }
 
-    public void go() {
-        callElevator(build.floors[level-1]);
-        if (liftingUp) {
-            for (; level < requiredFloor; level++) {
-//                callElevator(build.floors[level]);
-                letOffPass();
-                letInPass();
-                System.out.println(this);
-            }
-            liftingUp = false;
-        } else {
-            for (; level > requiredFloor; level--) {
-//                callElevator(build.floors[level]);
-                letOffPass();
-                letInPass();
-                System.out.println(this);
-            }
-            liftingUp = true;
-        }
-    }
-
-    public void letOffPass() {
+    public void letOffPass(Building b) {
         for (byte i = 0; i < passengers.size(); ) {
             if (passengers.get(i).getDesiredFloor() == level) {
-                build.floors[level-1].addPassenger(passengers.remove(i));
+                b.floors[level-1].addPassenger(passengers.remove(i));
             } else i++;
         }
     }
 
-    public void letInPass() {
-        if (capacity > passengers.size()) {
-            ListIterator<Passenger> passLT = build.floors[level-1].passengers.listIterator();
+    public void letInPass(Building b) {
+        if (b.floors[level-1].numberOfPas > 0) {
+            ListIterator<Passenger> passLT = b.floors[level-1].passengers.listIterator();
             Passenger p;
             while(passLT.hasNext() && capacity > passengers.size()) {
                 p = passLT.next();
                 if(liftingUp == (p.getDesiredFloor() > level)) {
                 passLT.remove();
-                build.floors[level-1].numberOfPas -= 1;
+                b.floors[level-1].numberOfPas -= 1;
                 passengers.add(p);
-                if((liftingUp) == p.getDesiredFloor() > requiredFloor) {
-                    requiredFloor = p.getDesiredFloor();
-                    }
+                stops[p.getDesiredFloor()-1] = true;
                 }
             }
         }
     }
-
+    public byte getLevel() {
+        return level;
+    }
 
     @Override
     public String toString() {
