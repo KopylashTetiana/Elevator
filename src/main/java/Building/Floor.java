@@ -6,7 +6,6 @@ import java.util.List;
 public class Floor {
     public final byte level;
     public int numberOfPas;
-//    private boolean elCall;
     public final Building build;
     public final List<Passenger> passengers = new LinkedList<>();
 
@@ -20,26 +19,30 @@ public class Floor {
     }
 
     public void addPassenger(Passenger passenger) {
-        if(passenger != null) {
-        passengers.add(passenger);
-        passenger.currentFloor = level;
-        passenger.desiredFloor = generateDesiredFloor();
-        numberOfPas++;}
+        if (passenger != null) {
+            passengers.add(passenger);
+            passenger.currentFloor = level;
+            passenger.desiredFloor = generateDesiredFloor();
+            numberOfPas++;
+        }
     }
 
     private byte generateDesiredFloor() {
         byte dF;
         do {
-            dF = (byte)(Math.random()*build.floors.length+1);
+            dF = (byte) (Math.random() * build.floors.length + 1);
         }
         while (dF == level);
         return dF;
     }
+
     @Override
     public String toString() {
-        switch(numberOfPas) {
-            case 0: return "The " + level + " floor has no passengers.";
-            case 1: return "The " + level + " floor has 1 passenger.";
+        switch (numberOfPas) {
+            case 0:
+                return "The " + level + " floor has no passengers.";
+            case 1:
+                return "The " + level + " floor has 1 passenger.";
             default:
                 return "The " + level +
                         " floor has " + numberOfPas +

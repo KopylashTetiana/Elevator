@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Added counter and &quot;***Step counter***&quot; into Elevator.go() method.">
+    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Refactoring Elevator and Building">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,22 +45,23 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Tresp/Development/IDEAProjects/Elevator1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Tresp/Development/IDEAProjects/Elevator1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Tresp\Development\IDEAProjects" />
@@ -117,6 +119,8 @@
       <workItem from="1663761732178" duration="9845000" />
       <workItem from="1663869464290" duration="6662000" />
       <workItem from="1663924593383" duration="15511000" />
+      <workItem from="1663958681873" duration="55000" />
+      <workItem from="1664037993986" duration="3907000" />
     </task>
     <task id="LOCAL-00001" summary="Building with elevator has created.">
       <created>1663247856687</created>
@@ -181,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663939303198</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Refactoring Elevator and Building">
+      <created>1663958724731</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663958724731</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +222,8 @@
     <MESSAGE value="Changed toString() methods, refactoring." />
     <MESSAGE value="Changed Elevator, Floor classes." />
     <MESSAGE value="Added counter and &quot;***Step counter***&quot; into Elevator.go() method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added counter and &quot;***Step counter***&quot; into Elevator.go() method." />
+    <MESSAGE value="Refactoring Elevator and Building" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring Elevator and Building" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
