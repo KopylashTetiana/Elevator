@@ -2,13 +2,16 @@ package Building;
 
 import Elevator.Elevator;
 
+import java.util.Random;
+
 public class Building {
-    public final Floor[] floors = new Floor[(byte) (Math.random() * 16 + 5)];
+    final Random random = new Random();
+    public final Floor[] floors = new Floor[(byte) (random.nextInt(16) + 5)];
     public Elevator elevator;
 
     public Building() {
         for (byte i = 0; i < floors.length; i++) {
-            floors[i] = new Floor(this, (byte) (i + 1), (byte) (Math.random() * 11));
+            floors[i] = new Floor(this, (byte) (i + 1), (byte) random.nextInt(11));
         }
         elevator = new Elevator(floors.length);
     }

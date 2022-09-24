@@ -30,7 +30,7 @@ public class Floor {
     private byte generateDesiredFloor() {
         byte dF;
         do {
-            dF = (byte) (Math.random() * build.floors.length + 1);
+            dF = (byte) (build.random.nextInt(build.floors.length)+1);
         }
         while (dF == level);
         return dF;

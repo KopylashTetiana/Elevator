@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="Refactoring Elevator and Building">
+    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="New method callElevator(int) added. Building.toString() changed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Building.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Building/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Floor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +119,7 @@
       <workItem from="1663869464290" duration="6662000" />
       <workItem from="1663924593383" duration="15511000" />
       <workItem from="1663958681873" duration="55000" />
-      <workItem from="1664037993986" duration="3907000" />
+      <workItem from="1664037993986" duration="5256000" />
     </task>
     <task id="LOCAL-00001" summary="Building with elevator has created.">
       <created>1663247856687</created>
@@ -192,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663958724731</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="New method callElevator(int) added. Building.toString() changed">
+      <created>1664042820854</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1664042820854</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +229,8 @@
     <MESSAGE value="Changed Elevator, Floor classes." />
     <MESSAGE value="Added counter and &quot;***Step counter***&quot; into Elevator.go() method." />
     <MESSAGE value="Refactoring Elevator and Building" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring Elevator and Building" />
+    <MESSAGE value="New method callElevator(int) added. Building.toString() changed" />
+    <option name="LAST_COMMIT_MESSAGE" value="New method callElevator(int) added. Building.toString() changed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
