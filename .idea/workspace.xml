@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="New method callElevator(int) added. Building.toString() changed">
+    <list default="true" id="5fa56241-4868-40d5-a50c-612c49665692" name="Changes" comment="New Random random added into Building, random method changed in the Building() constructor, in Building.floors[] array and in the Floor.generateDesiredFloor() method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Building/Building.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Building.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Floor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Floor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Building/Passenger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Building/Passenger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Elevator/Elevator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Tresp/Development/IDEAProjects/Elevator1",
+    "last_opened_file_path": "D:/Tresp/Development/IDEAProjects/Elevator",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -119,7 +120,16 @@
       <workItem from="1663869464290" duration="6662000" />
       <workItem from="1663924593383" duration="15511000" />
       <workItem from="1663958681873" duration="55000" />
-      <workItem from="1664037993986" duration="5256000" />
+      <workItem from="1664037993986" duration="5334000" />
+      <workItem from="1664101858643" duration="2275000" />
+      <workItem from="1664180960810" duration="1189000" />
+      <workItem from="1664296825790" duration="1449000" />
+      <workItem from="1664464942851" duration="1310000" />
+      <workItem from="1664479100186" duration="302000" />
+      <workItem from="1664561039598" duration="127000" />
+      <workItem from="1664723929610" duration="39000" />
+      <workItem from="1664724908617" duration="768000" />
+      <workItem from="1665952157034" duration="1100000" />
     </task>
     <task id="LOCAL-00001" summary="Building with elevator has created.">
       <created>1663247856687</created>
@@ -198,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664042820854</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="New Random random added into Building, random method changed in the Building() constructor, in Building.floors[] array and in the Floor.generateDesiredFloor() method.">
+      <created>1664044161388</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664044161388</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,7 +247,8 @@
     <MESSAGE value="Added counter and &quot;***Step counter***&quot; into Elevator.go() method." />
     <MESSAGE value="Refactoring Elevator and Building" />
     <MESSAGE value="New method callElevator(int) added. Building.toString() changed" />
-    <option name="LAST_COMMIT_MESSAGE" value="New method callElevator(int) added. Building.toString() changed" />
+    <MESSAGE value="New Random random added into Building, random method changed in the Building() constructor, in Building.floors[] array and in the Floor.generateDesiredFloor() method." />
+    <option name="LAST_COMMIT_MESSAGE" value="New Random random added into Building, random method changed in the Building() constructor, in Building.floors[] array and in the Floor.generateDesiredFloor() method." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

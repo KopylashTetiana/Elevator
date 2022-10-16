@@ -16,8 +16,9 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return "Passenger from " + currentFloor +
-                " floor is going to " + desiredFloor +
-                " floor.";
+        if (desiredFloor < 10)
+            return "__" + desiredFloor;
+        else
+            return "_" + desiredFloor;
     }
 }

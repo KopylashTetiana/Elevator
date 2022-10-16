@@ -92,8 +92,7 @@ public class Elevator {
         sB.append(c);
         for (byte i = 0; i < capacity; i++) {
             if (i < passengers.size()) {
-                sB.append((passengers.get(i).getDesiredFloor() > 9) ? '_' : "__");
-                sB.append(passengers.get(i).getDesiredFloor());
+                sB.append(passengers.get(i));
             } else {
                 sB.append("___");
             }

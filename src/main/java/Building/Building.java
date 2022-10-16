@@ -38,11 +38,11 @@ public class Building {
             }
             sB.append(i).append('|').append((i == elevator.getLevel()) ? (elevator) : (" ".repeat(17))).append('|');
             for (Passenger p : floors[i - 1].passengers) {
-                sB.append((p.getDesiredFloor() < 10) ? "  " : " ").append(p.getDesiredFloor());
+                sB.append(p);
             }
-            sB.append("   ".repeat(Math.max(0, 20 - floors[i - 1].numberOfPas))).append("|\n");
+            sB.append("___".repeat(Math.max(0, 20 - floors[i - 1].numberOfPas))).append("|\n");
         }
-        sB.append("_".repeat(83)).append("\n");
+        sB.append('|').append("_".repeat(81)).append("|\n");
         return sB.toString();
     }
 }
