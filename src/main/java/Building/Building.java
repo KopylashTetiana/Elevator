@@ -7,7 +7,7 @@ import java.util.Random;
 public class Building {
     final Random random = new Random();
     public final Floor[] floors = new Floor[(byte) (random.nextInt(16) + 5)];
-    public Elevator elevator;
+    Elevator elevator;
 
     public Building() {
         for (byte i = 0; i < floors.length; i++) {

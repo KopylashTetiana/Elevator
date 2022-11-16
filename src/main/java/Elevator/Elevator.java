@@ -8,7 +8,7 @@ import java.util.ListIterator;
 
 
 public class Elevator {
-    public static final byte capacity = 5;
+    static final byte capacity = 5;
     private boolean liftingUp = true;
     List<Passenger> passengers = new ArrayList<>();
     boolean [] stops;

@@ -4,9 +4,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Floor {
-    public final byte level;
+    final byte level;
     public int numberOfPas;
-    public final Building build;
+    final Building build;
     public final List<Passenger> passengers = new LinkedList<>();
 
     public Floor(Building b, byte floorNum, byte numbOfPas) {
