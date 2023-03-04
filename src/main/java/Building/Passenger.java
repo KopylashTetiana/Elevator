@@ -5,9 +5,9 @@ public class Passenger {
     byte desiredFloor;
     int currentFloor;
 
-    public Passenger(int currentFl, byte desiredFl) {
-        currentFloor = currentFl;
-        desiredFloor = desiredFl;
+    public Passenger(int currentFloor, byte desiredFloor) {
+        this.currentFloor = currentFloor;
+        this.desiredFloor = desiredFloor;
     }
 
     public byte getDesiredFloor() {

@@ -36,7 +36,7 @@ public class Building {
             if (i < 10) {
                 sB.append(' ');
             }
-            sB.append(i).append('|').append((i == elevator.getLevel()) ? (elevator) : (" ".repeat(17))).append('|');
+            sB.append(i).append('|').append((i == elevator.getCurrentFloor()) ? (elevator) : (" ".repeat(17))).append('|');
             for (Passenger p : floors[i - 1].passengers) {
                 sB.append(p);
             }
