@@ -14,23 +14,22 @@ public class Floor {
         level = floorNum;
         numberOfPas = numbOfPas;
         for (int i = 0; i < numbOfPas; i++) {
-            passengers.add(new Passenger(level, generateDesiredFloor()));
+            passengers.add(new Passenger(generateDesiredFloor()));
         }
     }
 
     public void addPassenger(Passenger passenger) {
         if (passenger != null) {
             passengers.add(passenger);
-            passenger.currentFloor = level;
-            passenger.desiredFloor = generateDesiredFloor();
+            passenger.setDesiredFloor(generateDesiredFloor());
             numberOfPas++;
         }
     }
 
-    private byte generateDesiredFloor() {
-        byte dF;
+    private int generateDesiredFloor() {
+        int dF;
         do {
-            dF = (byte) (build.random.nextInt(build.floors.length)+1);
+            dF = (build.random.nextInt(build.floors.length)+1);
         }
         while (dF == level);
         return dF;

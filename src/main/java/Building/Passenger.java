@@ -2,16 +2,18 @@ package Building;
 
 
 public class Passenger {
-    byte desiredFloor;
-    int currentFloor;
+    private int desiredFloor;
 
-    public Passenger(int currentFloor, byte desiredFloor) {
-        this.currentFloor = currentFloor;
+    public Passenger(int desiredFloor) {
         this.desiredFloor = desiredFloor;
     }
 
-    public byte getDesiredFloor() {
+    public int getDesiredFloor() {
         return desiredFloor;
+    }
+
+    public void setDesiredFloor(int desiredFloor) {
+        this.desiredFloor = desiredFloor;
     }
 
     @Override
